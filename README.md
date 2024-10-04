@@ -1,3 +1,2 @@
 # CashFlow
-#### Video Demo:
-#### Description:
+A command-line interface to track income and expenses
