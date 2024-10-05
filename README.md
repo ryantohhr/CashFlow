@@ -15,3 +15,4 @@ Use pytest to test the program
 ```
 $ pytest project.py
 ```
+Refer to https://pypi.org/project/tabulate/ for table style options. (Default: rounded_outline)
