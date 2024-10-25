@@ -1,5 +1,5 @@
 # CashFlow
-A command-line interface to track income and expenses using Python.
+A command-line interface to track expenses using Python.
 #### Video Demo
 ## Installation
 Use pip to install `tabulate`
