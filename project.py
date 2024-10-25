@@ -65,8 +65,8 @@ class Account:
                 if file.tell() == 0:
                     writer.writeheader()
                 writer.writerow({"item": item, "amt": amt, "date": date})
-            for row in table:
-                writer.writerow({"item": row["item"], "amt": row["amt"], "date": row["date"]})
+                for row in table:
+                    writer.writerow({"item": row["item"], "amt": row["amt"], "date": row["date"]})
         except FileNotFoundError:
             print("Item does not exist")
         
