@@ -6,11 +6,11 @@ class Account:
 
 
     @classmethod
-    def access(cls, key):
+    def access(cls, key, tablestyle):
         match key:
             case "v":
                 try:
-                    print(Account.view_expenses())
+                    print(Account.view_expenses(tablestyle))
                 except FileNotFoundError:
                     print("Please record an expense first")
             case "a":
@@ -20,7 +20,7 @@ class Account:
         
 
     @classmethod
-    def view_expenses(cls, tablestyle="rounded_outline"):
+    def view_expenses(cls, tablestyle):
         table = []
         with open("expenses.csv", "r") as file:
             reader = csv.DictReader(file)
@@ -69,7 +69,8 @@ class Account:
                     writer.writerow({"item": row["item"], "amt": row["amt"], "date": row["date"]})
         except FileNotFoundError:
             print("Item does not exist")
-        
+
+tablestyle = "rounded_outline"   
 
 def main():
     try:
@@ -84,7 +85,7 @@ def main():
 def default(tablestyle):
     print(menu(tablestyle))
     print("Ctrl + D to exit program")
-    Account.access(input("Enter a key: ").lower())
+    Account.access(input("Enter a key: ").lower(), tablestyle)
     return 0
 
 
